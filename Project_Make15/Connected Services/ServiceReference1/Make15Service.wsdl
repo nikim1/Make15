@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Make15Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="WSDualHttpBinding_IMake15Service_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsrm:RMAssertion xmlns:wsrm="http://schemas.xmlsoap.org/ws/2005/02/rm/policy">
+          <wsrm:InactivityTimeout Milliseconds="600000" />
+          <wsrm:AcknowledgementInterval Milliseconds="200" />
+        </wsrm:RMAssertion>
+        <cdp:CompositeDuplex xmlns:cdp="http://schemas.microsoft.com/net/2006/06/duplex" />
+        <ow:OneWay xmlns:ow="http://schemas.microsoft.com/ws/2005/05/routing/policy" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:57932/Make15Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:57932/Make15Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:57932/Make15Service.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMake15Service_MakePlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:MakePlayer" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_MakePlayer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MakePlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_MarkAsTaken_InputMessage">
+    <wsdl:part name="parameters" element="tns:MarkAsTaken" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_MarkAsTaken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MarkAsTakenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_GetUntaken_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUntaken" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_GetUntaken_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUntakenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_GetTakenBy_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTakenBy" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_GetTakenBy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTakenByResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_GetTakenByOpponent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTakenByOpponent" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_GetTakenByOpponent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTakenByOpponentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_SendMsgToOpponent_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMsgToOpponent" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_SendMsgToOpponent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMsgToOpponentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_RemovePlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemovePlayer" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_RemovePlayer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemovePlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_ReceiveMsg_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveMsg" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_ReceiveMsg_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveMsgResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_RefreshStat_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshStat" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_RefreshStat_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:RefreshStatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_IsActive_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:IsActive" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_IsActive_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:IsActiveResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_IsHisTurn_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:IsHisTurn" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_IsHisTurn_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:IsHisTurnResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_SetNamesWindow_OutputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:SetNamesWindow" />
+  </wsdl:message>
+  <wsdl:message name="IMake15Service_SetNamesWindow_InputCallbackMessage">
+    <wsdl:part name="parameters" element="tns:SetNamesWindowResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMake15Service">
+    <wsdl:operation name="MakePlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMake15Service/MakePlayer" message="tns:IMake15Service_MakePlayer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMake15Service/MakePlayerResponse" message="tns:IMake15Service_MakePlayer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MarkAsTaken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMake15Service/MarkAsTaken" message="tns:IMake15Service_MarkAsTaken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMake15Service/MarkAsTakenResponse" message="tns:IMake15Service_MarkAsTaken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUntaken">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMake15Service/GetUntaken" message="tns:IMake15Service_GetUntaken_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMake15Service/GetUntakenResponse" message="tns:IMake15Service_GetUntaken_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTakenBy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMake15Service/GetTakenBy" message="tns:IMake15Service_GetTakenBy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMake15Service/GetTakenByResponse" message="tns:IMake15Service_GetTakenBy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTakenByOpponent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMake15Service/GetTakenByOpponent" message="tns:IMake15Service_GetTakenByOpponent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMake15Service/GetTakenByOpponentResponse" message="tns:IMake15Service_GetTakenByOpponent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMsgToOpponent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMake15Service/SendMsgToOpponent" message="tns:IMake15Service_SendMsgToOpponent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMake15Service/SendMsgToOpponentResponse" message="tns:IMake15Service_SendMsgToOpponent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemovePlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMake15Service/RemovePlayer" message="tns:IMake15Service_RemovePlayer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMake15Service/RemovePlayerResponse" message="tns:IMake15Service_RemovePlayer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveMsg">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMake15Service/ReceiveMsg" message="tns:IMake15Service_ReceiveMsg_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IMake15Service/ReceiveMsgResponse" message="tns:IMake15Service_ReceiveMsg_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RefreshStat">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMake15Service/RefreshStat" message="tns:IMake15Service_RefreshStat_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IMake15Service/RefreshStatResponse" message="tns:IMake15Service_RefreshStat_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsActive">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMake15Service/IsActive" message="tns:IMake15Service_IsActive_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IMake15Service/IsActiveResponse" message="tns:IMake15Service_IsActive_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsHisTurn">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMake15Service/IsHisTurn" message="tns:IMake15Service_IsHisTurn_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IMake15Service/IsHisTurnResponse" message="tns:IMake15Service_IsHisTurn_InputCallbackMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetNamesWindow">
+      <wsdl:output wsaw:Action="http://tempuri.org/IMake15Service/SetNamesWindow" message="tns:IMake15Service_SetNamesWindow_OutputCallbackMessage" />
+      <wsdl:input wsaw:Action="http://tempuri.org/IMake15Service/SetNamesWindowResponse" message="tns:IMake15Service_SetNamesWindow_InputCallbackMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WSDualHttpBinding_IMake15Service" type="tns:IMake15Service">
+    <wsp:PolicyReference URI="#WSDualHttpBinding_IMake15Service_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="MakePlayer">
+      <soap12:operation soapAction="http://tempuri.org/IMake15Service/MakePlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MarkAsTaken">
+      <soap12:operation soapAction="http://tempuri.org/IMake15Service/MarkAsTaken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUntaken">
+      <soap12:operation soapAction="http://tempuri.org/IMake15Service/GetUntaken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTakenBy">
+      <soap12:operation soapAction="http://tempuri.org/IMake15Service/GetTakenBy" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTakenByOpponent">
+      <soap12:operation soapAction="http://tempuri.org/IMake15Service/GetTakenByOpponent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMsgToOpponent">
+      <soap12:operation soapAction="http://tempuri.org/IMake15Service/SendMsgToOpponent" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemovePlayer">
+      <soap12:operation soapAction="http://tempuri.org/IMake15Service/RemovePlayer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveMsg">
+      <soap12:operation soapAction="http://tempuri.org/IMake15Service/ReceiveMsg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RefreshStat">
+      <soap12:operation soapAction="http://tempuri.org/IMake15Service/RefreshStat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsActive">
+      <soap12:operation soapAction="http://tempuri.org/IMake15Service/IsActive" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsHisTurn">
+      <soap12:operation soapAction="http://tempuri.org/IMake15Service/IsHisTurn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetNamesWindow">
+      <soap12:operation soapAction="http://tempuri.org/IMake15Service/SetNamesWindow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Make15Service">
+    <wsdl:port name="WSDualHttpBinding_IMake15Service" binding="tns:WSDualHttpBinding_IMake15Service">
+      <soap12:address location="http://localhost:57932/Make15Service.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:57932/Make15Service.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

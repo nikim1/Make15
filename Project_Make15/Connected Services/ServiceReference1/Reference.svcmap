@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="dbed27bd-08fd-4f0a-b809-5af6eeb586b8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:57932/Make15Service.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Make15Service.xsd" MetadataType="Schema" ID="13dc026c-2358-4504-ad3f-368b806b2c93" SourceId="1" SourceUrl="http://localhost:57932/Make15Service.svc?xsd=xsd0" />
+    <MetadataFile FileName="Make15Service.wsdl" MetadataType="Wsdl" ID="d989551b-c94c-4c08-bdf1-2ac22cbba26d" SourceId="1" SourceUrl="http://localhost:57932/Make15Service.svc?wsdl" />
+    <MetadataFile FileName="Make15Service2.xsd" MetadataType="Schema" ID="0cee7b2b-fb60-4876-a54a-4c8ed5c37993" SourceId="1" SourceUrl="http://localhost:57932/Make15Service.svc?xsd=xsd2" />
+    <MetadataFile FileName="Make15Service1.xsd" MetadataType="Schema" ID="9e5d2a4d-6e2e-4589-b2d9-6622380d7a2f" SourceId="1" SourceUrl="http://localhost:57932/Make15Service.svc?xsd=xsd1" />
+    <MetadataFile FileName="Make15Service.disco" MetadataType="Disco" ID="ecaa0b1f-e758-4195-b3d3-2724215a501f" SourceId="1" SourceUrl="http://localhost:57932/Make15Service.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

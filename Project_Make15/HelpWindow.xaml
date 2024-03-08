@@ -1,0 +1,45 @@
+﻿<Window x:Class="Project_Make15.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_Make15"
+        mc:Ignorable="d"
+        Title="Help Section" Height="800" Width="700"
+        MinHeight="650" MinWidth="600"
+        MaxHeight="900" MaxWidth="1000">
+    <Window.Resources>
+        <Style x:Key="blockStyle">
+            <Setter Property="TextBlock.HorizontalAlignment" Value="Left"/>
+            <Setter Property="TextBlock.Text" Value="Loading"/>
+            <Setter Property="TextBlock.Margin" Value="0,23,0,0"/>
+            <Setter Property="TextBlock.FontSize" Value="13"/>
+            <Setter Property="TextBlock.TextWrapping" Value="Wrap"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="LightBlue">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <!--text-->
+            <ColumnDefinition Width="*"/>
+            <!--pictures-->
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!--menu-->
+        <TextBlock x:Name="txtBlckMenuHeader" Grid.Row="0" HorizontalAlignment="Center" Text="Game rules" FontWeight="Bold" FontSize="20"/>
+        <TextBlock x:Name="txtBlckMenu" Grid.Row="0" Style="{StaticResource blockStyle}"/>
+        <Image Source="Images/namePick.png" Grid.Row="0" Grid.Column="1" Margin="10"/>
+        <!--PVP-->
+        <TextBlock x:Name="txtBlckPVPHeader" Grid.Row="1" HorizontalAlignment="Center" Text="PVP games" FontWeight="Bold" FontSize="20"/>
+        <TextBlock x:Name="txtBlckPVP" Grid.Row="1" Style="{StaticResource blockStyle}"/>
+        <Image Source="Images/players.png" Grid.Row="1" Grid.Column="1" Margin="10"/>
+        <!--PVE-->
+        <TextBlock x:Name="txtBlckPVEHeader" Grid.Row="2" HorizontalAlignment="Center" Text="PVE gammes" FontWeight="Bold" FontSize="20"/>
+        <TextBlock x:Name="txtBlckPVE" Grid.Row="2" Style="{StaticResource blockStyle}"/>
+        <Image Source="Images/winner.png" Grid.Row="2" Grid.Column="1" Margin="10"/>
+    </Grid>
+</Window>

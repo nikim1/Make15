@@ -1,0 +1,36 @@
+﻿<Window x:Class="Project_Make15.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_Make15"
+        mc:Ignorable="d"
+        Title="Menu" Height="600" Width="400"
+        MinHeight="500" MinWidth="300"
+        MaxHeight="700" MaxWidth="500"
+        Background="DodgerBlue">
+
+    <Window.Resources>
+        <Style x:Key="MenuBtnStyle">
+            <Setter Property="Button.FontSize" Value="30"/>
+            <Setter Property="Button.Margin" Value="45,45,45,45"/>
+            <Setter Property="Button.Background" Value="DeepSkyBlue"/>
+            <Setter Property="Button.FontWeight" Value="Bold"/>
+            <Setter Property="Button.BorderThickness" Value="10"/>
+            <Setter Property="Button.BorderBrush" Value="LightBlue"/>
+
+        </Style>
+    </Window.Resources>
+    
+    <Grid Background="LightSalmon"  Margin="20,20,20,20" HorizontalAlignment="Center" MinHeight="580" MinWidth="380">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0"  Content="Find Match" Style="{StaticResource MenuBtnStyle}" Click="btnFind_Click" Name="btnFind"/>
+        <Button Grid.Row="1"  Content="PVE" Style="{StaticResource MenuBtnStyle}" x:Name="btnPVE" Click="btnPVE_Click"/>
+        <Button Grid.Row="2"  Content="Help" Style="{StaticResource MenuBtnStyle}" x:Name="btnHelp" Click="btnHelp_Click" />
+
+    </Grid>
+</Window>
